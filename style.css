@@ -1,0 +1,622 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #070e13;
+  color: #f2f2f2;
+  margin: 0;
+}
+
+/* Estilos para encabezados, párrafos, listas, etc. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #10222e;
+  color: white;
+  padding: 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.site-name:hover {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  color: #f2f2f2;
+}
+
+.text-safety {
+  color: #808080;
+}
+
+.text-safety:hover {
+  color: #f2f2f2;
+}
+
+.text-gek {
+  color: #ff6600;
+}
+
+.text-gek:hover {
+  color: #f2f2f2;
+}
+
+.site-desc {
+  font-size: 1em;
+  font-weight: lighter;
+  margin-top: 5px;
+  text-align: left;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: #070e13;
+  background-color: #ff6600;
+}
+
+nav a.active {
+  color: #070e13;
+  background-color: #ff6600;
+}
+
+.hero {
+  height: 100vh;
+  position: relative; /* Importante para el posicionamiento absoluto de los elementos */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* El video se coloca detrás del contenido */
+}
+
+.hero-content {
+  width: 100%;
+  position: relative; /* Permite posicionar elementos dentro del contenedor */
+  z-index: 1; /* El contenido se coloca delante del video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  /* Estilos adicionales para mejorar la legibilidad del texto sobre el video */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+  padding: 40px; /* Aumenta el padding para separar el texto del borde */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #ff6600;
+}
+
+#about {
+  background-color: #10222e;
+  color: white;
+}
+
+.about-title {
+  position: relative; /* Para posicionar el título sobre la imagen */
+  margin-bottom: 40px;
+  z-index: 10; /* El título se coloca delante de la imagen */
+}
+
+.about-title h2 {
+  position: absolute; /* El título se superpone a la imagen */
+  top: 150px; /* Ajusta la posición vertical del título */
+  left: 20px; /* Ajusta la posición horizontal del título */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ff6600; /* Color del título */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semitransparente para el título */
+  border-radius: 10px;
+  font-size: 6rem; /* Tamaño del título */
+}
+
+.about-intro {
+  position: relative; /* Para posicionar la imagen de fondo */
+  margin-bottom: 40px;
+}
+
+.about-intro-image-container {
+  position: relative; /* Para posicionar el texto sobre la imagen */
+}
+
+.about-intro-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-intro-content {
+  width: 45%;
+  position: absolute; /* El texto se superpone a la imagen */
+  top: 50%;
+  left: 620px; /* Ajusta la posición horizontal del texto */
+  transform: translateY(-50%); /* Centra verticalmente el texto */
+  color: white; /* Color del texto */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semitransparente para el texto */
+  padding: 20px;
+}
+
+.about-mv {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-mv-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-mv-card {
+  width: 45%;
+  height: 450px;
+  perspective: 1000px; /* Para el efecto 3D */
+}
+
+.about-mv-card-front,
+.about-mv-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden; /* Evita que se vea la parte trasera al girar */
+  transition: transform 0.5s; /* Transición suave para el giro */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-mv-card-front img {
+  width: 20%;
+}
+
+.about-mv-card-front {
+  background-color: #10222e; /* Color de fondo frontal */
+}
+
+.about-mv-card-back {
+  background-color: #808080; /* Color de fondo trasero */
+  transform: rotateY(180deg); /* La parte trasera está girada inicialmente */
+  padding: 20px;
+}
+
+.about-mv-card:hover .about-mv-card-front {
+  transform: rotateY(-180deg); /* Gira la parte frontal al pasar el mouse */
+}
+
+.about-mv-card:hover .about-mv-card-back {
+  transform: rotateY(0deg); /* Gira la parte trasera al pasar el mouse */
+}
+
+.about-values h3 {
+  font-size: 55px;
+  text-align: center;
+  color: #ff6600;
+  margin-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.about-values-content {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.about-values-image {
+  max-width: 60%;
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+  font-size: 18px;
+}
+
+strong {
+  font-weight: bold;
+
+  color: #ff6600;
+}
+
+/* ... (Estilos anteriores) */
+
+#services {
+  background-color: #070e13;
+  color: #f2f2f2;
+  text-align: center;
+  align-items: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.services-title {
+  font-size: 35px;
+  color: #ff6600;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
+}
+
+.service-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Para que la imagen no se salga de la tarjeta */
+}
+
+.service-card-content {
+  background-color: #10222e; /* Color de fondo del contenido */
+}
+
+.service-card-content h3 {
+  width: 100%;
+  height: 30px;
+  font-size: 1.5rem;
+  background-color: #ff6600ff;
+  margin-bottom: 10px;
+}
+
+.service-card-content p {
+  width: 100%;
+  height: 250px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 290px;
+  display: block;
+}
+
+.services-button {
+  margin-top: 35px;
+  text-align: center;
+}
+
+/* ... (Estilos anteriores) */
+
+#contact {
+  padding: 60px 0;
+  text-align: center; /* Centra el contenido *dentro* de la sección */
+}
+
+#contact .container {
+  max-width: 960px; /* Ancho máximo del contenedor (ajusta si es necesario) */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+#contact .container h2 {
+  color: #ff6600;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  margin-bottom: 30px;
+}
+
+#contact-form {
+  display: flex; /* Convierte el formulario en flexbox */
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left; /* Alinea las etiquetas a la izquierda */
+  width: 60%; /* Ancho de las etiquetas */
+}
+
+.organizacion {
+  width: 60%; /* Ancho del contenedor de la organización */
+  margin-bottom: 20px;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.horarios {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.horario {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* Centra los elementos horizontalmente en cada horario */
+}
+
+.horario select,
+.horario input[type="time"] {
+  flex: 1;
+}
+
+#contact-form textarea {
+  height: 150px;
+  resize: vertical;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#contact-form button {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #e65c00;
+}
+
+/* ... (Estilos anteriores) */
+
+#main-footer {
+  background-color: #10222e;
+  color: white;
+  padding: 10px 0; /* Aumenta el padding vertical */
+}
+
+#main-footer .container {
+  max-width: 100%; /* Ancho máximo del contenedor */
+  height: auto;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Distribuye los elementos en el espacio disponible */
+  align-items: center; /* Alinea los elementos en la parte superior */
+}
+
+.footer-center-sup {
+  text-align: center;
+}
+
+.footer-inf {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-left {
+  width: 30%; /* Ancho para la sección izquierda */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-social {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-social img:hover {
+  width: 25px;
+  height: 25px;
+}
+
+.footer-logo img {
+  max-width: 200px; /* Ancho máximo del logo (ajusta según necesites) */
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%; /* Ancho para las secciones central y derecha */
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: justify;
+  text-align: left;
+  justify-content: center;
+  width: 30%; /* Ancho para las secciones central y derecha */
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.footer-center a,
+.footer-right a {
+  display: block; /* Para que los enlaces se muestren uno debajo del otro */
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.footer-center a:hover {
+  display: block; /* Para que los enlaces se muestren uno debajo del otro */
+  color: #ff6600;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.footer-right a:hover {
+  display: block; /* Para que los enlaces se muestren uno debajo del otro */
+  color: #ff6600;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+/* Estilos para hacerlo responsivo */
+@media (max-width: 768px) {
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+    margin-bottom: 20px; /* Espacio entre las secciones */
+    text-align: center; /* Centrar el texto en pantallas pequeñas */
+  }
+
+  .footer-social {
+    justify-content: center; /* Centrar los iconos en pantallas pequeñas */
+  }
+}
+
+#scrollToTopBtn {
+  position: fixed; /* Posición fija en la pantalla */
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6600; /* Color naranja */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Forma circular */
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+  opacity: 0.8; /* Opacidad */
+  transition: opacity 0.3s ease; /* Transición suave de opacidad */
+}
+
+#scrollToTopBtn:hover {
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+}
+
+#scrollToTopBtn i {
+  color: #f2f2f2; /* Estilos para el icono (flecha) */
+  font-weight: bold;
+}
+
+/* Opcional: Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  #scrollToTopBtn {
+    bottom: 10px;
+    right: 10px;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
